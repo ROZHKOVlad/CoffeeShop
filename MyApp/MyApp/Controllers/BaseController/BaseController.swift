@@ -14,13 +14,14 @@ class BaseController: UIViewController {
         configure()
     }
     
-    func addNavigationBarButton(at position: NavigationBarButtonSide, title: String) {
+    func addNavigationBarButton(at position: NavigationBarButtonSide, title: String, image: UIImage?) {
         
-        let navBarButton = UIButton(type: .system)
+        let navBarButton = UIButton()
         navBarButton.setTitle(title, for: .normal)
         navBarButton.setTitleColor(Resources.Colors.active, for: .normal)
         navBarButton.setTitleColor(Resources.Colors.inactive, for: .disabled)
         navBarButton.titleLabel?.font = Resources.Fonts.helvelticaRegular(with: 20)
+        navBarButton.setImage(image, for: .normal)
         
         switch position {
         case .left:

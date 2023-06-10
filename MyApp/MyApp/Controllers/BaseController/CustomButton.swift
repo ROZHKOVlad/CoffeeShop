@@ -6,9 +6,11 @@ final class CustomButton: UIButton {
     
     private let iconView = UIImageView()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
+    private var image = UIImage()
+    
+    init(image: UIImage) {
+        self.image = image
+        super.init(frame: CGRect())
         addViews()
         layoutViews()
         configure()
@@ -30,8 +32,8 @@ private extension CustomButton {
         NSLayoutConstraint.activate([
             iconView.centerYAnchor.constraint(equalTo: centerYAnchor),
             iconView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
-            iconView.heightAnchor.constraint(equalToConstant: 5),
-            iconView.widthAnchor.constraint(equalToConstant: 10),
+            iconView.heightAnchor.constraint(equalToConstant: 10),
+            iconView.widthAnchor.constraint(equalToConstant: 15),
             
             label.centerYAnchor.constraint(equalTo: centerYAnchor),
             label.rightAnchor.constraint(equalTo: iconView.leftAnchor),
@@ -49,7 +51,7 @@ private extension CustomButton {
         label.font = Resources.Fonts.helvelticaRegular(with: 15)
         
         iconView.translatesAutoresizingMaskIntoConstraints = false
-        iconView.image = Resources.Images.Additional.downArrow?.withRenderingMode(.alwaysTemplate)
+        iconView.image = image.withRenderingMode(.alwaysTemplate)
         iconView.tintColor = Resources.Colors.active
     }
 }

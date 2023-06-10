@@ -6,7 +6,7 @@ class OrderController: BaseController {
         super.viewDidLoad()
         title = "My Orders"
         navigationController?.tabBarItem.title = Resources.Strings.TabBar.order
-        addNavigationBarButton(at: .left, title: "Left")
-        addNavigationBarButton(at: .right, title: "Right")
+        addNavigationBarButton(at: .left, title: "Left", image: nil)
+        addNavigationBarButton(at: .right, title: "Right", image: nil)
     }
 }

@@ -9,6 +9,7 @@ class MenuController: BaseController {
         super.viewDidLoad()
         
         title = "Menu"
+        addNavigationBarButton(at: .right, title: "  ", image: UIImage(named: "shoppingBag"))
         navigationController?.tabBarItem.title = Resources.Strings.TabBar.menu
         
         let layout = UICollectionViewFlowLayout()
@@ -36,7 +37,6 @@ extension MenuController: UICollectionViewDataSource, UICollectionViewDelegate, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
         let product = menu.groups[0].products[indexPath.item]
         cell.setupCell(product: product)
-//        cell.addGestureRecognizer(UIGestureRecognizer)
         return cell
     }
     

@@ -2,7 +2,7 @@ import UIKit
 
 class SettingsController: BaseController {
     
-    private let filterButton = CustomButton()
+    private let filterButton = CustomButton(image: (UIImage(named: "trash")!))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,5 +33,6 @@ extension SettingsController {
         filterButton.translatesAutoresizingMaskIntoConstraints = false
         filterButton.setTitle(Resources.Strings.Menu.customButtonTitle, for: .normal)
         filterButton.setTitleColor(Resources.Colors.active, for: .normal)
+        filterButton.setImage(UIImage(named: "down_row"), for: .normal)
     }
 }
